@@ -1,21 +1,68 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import Headline from "../components/headline";
+import Bio from "../components/bio";
+import BlockHeading from "../components/block-heading";
+import StoryList from "../components/story-list";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const Container = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+`;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const Left = styled.div`
+  max-width: 66.666667%;
+  flex-basis: 66.666667%;
+  flex-grow: 0;
+`;
 
-export default IndexPage
+const Right = styled.div`
+  max-width: 33.333333%;
+  flex-basis: 33.333333%;
+  flex-grow: 0;
+`;
+
+const RightContainer = styled.div`
+  padding-left: 4em;
+`;
+
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "coding.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Layout>
+      <SEO title="Home | Dave Clark" />
+      <Container>
+        <Left>
+          <Headline data={data.file.childImageSharp.fluid} />
+          <StoryList />
+        </Left>
+        <Right>
+          <RightContainer>
+            <Bio />
+            <BlockHeading text="popular" />
+          </RightContainer>
+        </Right>
+      </Container>
+    </Layout>
+  );
+};
+
+export default IndexPage;

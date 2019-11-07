@@ -1,16 +1,28 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import { createGlobalStyle } from "styled-components";
+import Header from "./header";
+import { theme } from "../../config/theme";
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+const GlobalStyle = createGlobalStyle`
+  html {
+    background-color: ${theme.colours.white.base};
+    font-family: Helvetica;
+    color: ${theme.colours.black.base};
+  }
+  body {
+    margin: 0;
+    max-width: 1192px;
+    margin-left: auto;
+    margin-right: auto;
 
-import Header from "./header"
-import "./layout.css"
+    @media screen and (max-width: 515px) {   
+      padding-right: 1rem;
+      padding-left: 1rem;    
+    }
+  }    
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,32 +33,19 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <GlobalStyle />
+      <Header />
+      <main>{children}</main>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

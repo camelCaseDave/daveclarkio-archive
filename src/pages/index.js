@@ -52,7 +52,7 @@ const IndexPage = () => {
       <Container>
         <Left>
           <Headline data={data.file.childImageSharp.fluid} />
-          <StoryList />
+          <StoryList data={data.file.childImageSharp.fluid} />
         </Left>
         <Right>
           <RightContainer>

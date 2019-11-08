@@ -7,6 +7,7 @@ import Headline from "../components/headline";
 import Bio from "../components/bio";
 import BlockHeading from "../components/block-heading";
 import StoryList from "../components/story-list";
+import PopularList from "../components/popular-list";
 import { useStaticQuery, graphql } from "gatsby";
 
 const Container = styled.div`
@@ -58,6 +59,7 @@ const IndexPage = () => {
           <RightContainer>
             <Bio />
             <BlockHeading text="popular" />
+            <PopularList data={data.file.childImageSharp.fluid} />
           </RightContainer>
         </Right>
       </Container>

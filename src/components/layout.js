@@ -16,10 +16,11 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1192px;
     margin-left: auto;
     margin-right: auto;
-
-    @media screen and (max-width: 515px) {   
-      padding-right: 1rem;
-      padding-left: 1rem;    
+    padding-right: 1rem;
+    padding-left: 1rem;   
+    
+    media="(min-width: 1080px)" {
+      margin: 0 64px;
     }
   }    
 `;

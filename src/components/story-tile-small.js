@@ -4,8 +4,9 @@ import styled from "styled-components";
 import InlineImage from "./inline-image";
 
 const ImageWrapper = styled.div`
-  width: 100%;
   flex-basis: 25%;
+  height: 50px;
+  width: 50px;
 `;
 
 const Container = styled.div`
@@ -20,30 +21,26 @@ const TextWrapper = styled.div`
   padding-right: 2rem;
 `;
 
-const Title = styled.h3`
+const Title = styled.h4`
   margin: 0;
   margin-bottom: 0.5em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
-const Description = styled.h4`
-  margin: 0;
-  margin-bottom: 2em;
-  color: grey;
-  font-weight: normal;
-`;
-
-const Date = styled.h4`
+const Date = styled.h5`
   margin: 0;
   font-weight: normal;
 `;
 
-const StoryTileBig = ({ title, description, timeToRead, imageData }) => {
+const StoryTileSmall = ({ title, imageData }) => {
   return (
     <Container>
       <TextWrapper>
         <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Date>Nov 7th</Date>
       </TextWrapper>
       <ImageWrapper>
         <InlineImage url={imageData.src} />
@@ -52,4 +49,4 @@ const StoryTileBig = ({ title, description, timeToRead, imageData }) => {
   );
 };
 
-export default StoryTileBig;
+export default StoryTileSmall;

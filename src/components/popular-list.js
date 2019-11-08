@@ -1,23 +1,21 @@
 import React from "react";
-import BlockHeading from "../components/block-heading";
-import StoryTileBig from "../components/story-tile-big";
+import StoryTileSmall from "../components/story-tile-small";
 
-const StoryList = ({ data }) => {
+const PopularList = ({ data }) => {
   return (
     <>
-      <BlockHeading text="latest" />
-      <StoryTileBig
-        title="Part two of a cool series"
+      <StoryTileSmall
+        title="Part two of a cool series that you should read"
         description="Some text that makes you want to read it Some text that makes you want to read it Some text that makes you want to read it"
         imageData={data}
       />
-      <StoryTileBig
+      <StoryTileSmall
         title="Part three of a cool series"
         description="Some text that makes you want to read it Some text that makes you want to read it Some text that makes you want to read it"
         imageData={data}
       />
-      <StoryTileBig
-        title="Part four of a cool series"
+      <StoryTileSmall
+        title="Part four of a cool series and I have a really long title like really long"
         description="Some text that makes you want to read it Some text that makes you want to read it Some text that makes you want to read it"
         imageData={data}
       />
@@ -25,4 +23,4 @@ const StoryList = ({ data }) => {
   );
 };
 
-export default StoryList;
+export default PopularList;

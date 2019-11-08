@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { theme } from "../../config/theme";
 import InlineImage from "./inline-image";
 
 const ImageWrapper = styled.div`
@@ -14,6 +14,11 @@ const Container = styled.div`
   justify-content: space-between;
   padding-top: 1em;
   padding-bottom: 1em;
+
+  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints.m}) {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 `;
 
 const TextWrapper = styled.div`

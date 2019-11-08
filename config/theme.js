@@ -1,6 +1,6 @@
 export const colours = {
   white: {
-    base: "#f0efe9",
+    base: "#f5f2eb",
   },
   black: {
     base: "#373435",
@@ -21,4 +21,10 @@ export const colours = {
 
 export const theme = {
   colours,
+  breakpoints: {
+    xs: "400px",
+    s: "552px",
+    m: "727.98px", 
+    l: "1192px"
+  }
 };

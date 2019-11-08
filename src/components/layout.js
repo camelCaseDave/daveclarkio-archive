@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { createGlobalStyle } from "styled-components";
 import Header from "./header";
 import { theme } from "../../config/theme";
+import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -16,13 +17,17 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1192px;
     margin-left: auto;
     margin-right: auto;
-    padding-right: 1rem;
-    padding-left: 1rem;   
-    
-    media="(min-width: 1080px)" {
-      margin: 0 64px;
-    }
   }    
+`;
+
+const Wrapper = styled.div`
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (max-width ${theme.breakpoints.m}) and (min-width: ${theme.breakpoints.s}) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `;
 
 const Layout = ({ children }) => {
@@ -39,8 +44,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <main>{children}</main>
+      <Wrapper>
+        <Header />
+        <main>{children}</main>
+      </Wrapper>
     </>
   );
 };

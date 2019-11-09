@@ -24,6 +24,11 @@ const TextWrapper = styled.div`
 const Title = styled.h3`
   margin: 0;
   margin-bottom: 0.5em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const Description = styled.h4`

@@ -16,6 +16,10 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 2rem;
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    margin-top: 1.33em;
+  }
 `;
 
 const Left = styled.div`
@@ -49,7 +53,7 @@ const RightContainer = styled.div`
   }
 `;
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   const headline = edges.find(e => e.node.frontmatter.headline === true).node;
   const latest = edges.filter(e => e.node.frontmatter.headline !== true);
@@ -78,9 +82,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id

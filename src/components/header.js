@@ -26,12 +26,16 @@ const Logo = styled.img`
   height: 2em;
 `;
 
+const StyledFlatLink = styled(FlatLink)`
+  display: flex;
+`;
+
 const Header = () => {
   return (
     <Container>
-      <FlatLink to={"/"}>
+      <StyledFlatLink to={"/"}>
         <Logo src={logo} alt="Dave Clark IO" />
-      </FlatLink>
+      </StyledFlatLink>
       <Separator width="2" height="29">
         <path
           d="M1 29V1"

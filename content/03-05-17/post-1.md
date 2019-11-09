@@ -2,7 +2,8 @@
 title: Calculate working time between two dates in C# (including SLA working hours)
 description: Neat tool to get your service team up and running efficiently
 date: 03/05/2017
-path: /blog/my-first-post
+path: /blog/post-1
+cover: ../03-05-17/coding.jpg
 ---
 
 <img src='coding.jpg' />

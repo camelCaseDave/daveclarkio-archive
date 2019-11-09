@@ -7,7 +7,7 @@ import Bio from "../components/bio";
 import BlockHeading from "../components/block-heading";
 import StoryList from "../components/story-list";
 import PopularList from "../components/popular-list";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { theme } from "../../config/theme";
 
 const Container = styled.div`
@@ -49,32 +49,22 @@ const RightContainer = styled.div`
   }
 `;
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "coding.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+const IndexPage = ({data}) => {
+  const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout>
       <SEO title="Home | Dave Clark" />
       <Container>
         <Left>
-          <Headline data={data.file.childImageSharp.fluid} />
-          <StoryList data={data.file.childImageSharp.fluid} />
+          <Headline data={edges[0].node} />
+          <StoryList data={edges.slice(1)} />
         </Left>
         <Right>
           <RightContainer>
             <Bio />
             <BlockHeading text="popular" />
-            <PopularList data={data.file.childImageSharp.fluid} />
+            <PopularList />
           </RightContainer>
         </Right>
       </Container>
@@ -83,3 +73,35 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 6
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+            date
+            description
+            cover {
+              childImageSharp {
+                fluid(
+                  maxWidth: 1000
+                  quality: 90
+                  traceSVG: { color: "#2B2B2F" }
+                ) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

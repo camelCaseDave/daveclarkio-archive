@@ -31,9 +31,9 @@ const HeadlineImage = styled(Img)`
 const Headline = ({ data }) => {
   return (
     <>
-      <HeadlineImage fluid={data} />
-      <Title>Overcome the Five Fears of Automation Testing</Title>
-      <Description>Some description let's go</Description>
+      <HeadlineImage fluid={data.frontmatter.cover.childImageSharp.fluid} />
+      <Title>{data.frontmatter.title}</Title>
+      <Description>{data.frontmatter.description}</Description>
     </>
   );
 };

@@ -6,21 +6,20 @@ const StoryList = ({ data }) => {
   return (
     <>
       <BlockHeading text="latest" />
-      <StoryTileBig
-        title="Part two of a cool series"
-        description="Some text that makes you want to read it Some text that makes you want to read it Some text that makes you want to read it"
-        imageData={data}
-      />
-      <StoryTileBig
-        title="Part three of a cool series"
-        description="Some text that makes you want to read it Some text that makes you want to read it Some text that makes you want to read it"
-        imageData={data}
-      />
-      <StoryTileBig
-        title="Part four of a cool series"
-        description="Some text that makes you want to read it Some text that makes you want to read it Some text that makes you want to read it"
-        imageData={data}
-      />
+      {data.map(({ node }) => {
+        const { id, frontmatter } = node;
+        const { cover, path, title, date, description } = frontmatter;
+        return (
+          <StoryTileBig
+            key={id}
+            cover={cover.childImageSharp.fluid}
+            path={path}
+            title={title}
+            description={description}
+            date={date}
+          />
+        );
+      })}
     </>
   );
 };

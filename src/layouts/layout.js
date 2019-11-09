@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
 import { createGlobalStyle } from "styled-components";
 import Header from "../components/header";
+import SEO from "../components/seo";
 import { theme } from "../../config/theme";
 import styled from "styled-components";
 
@@ -31,20 +31,11 @@ const Wrapper = styled.div`
 `;
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <GlobalStyle />
       <Wrapper>
+        <SEO />
         <Header />
         <main>{children}</main>
       </Wrapper>

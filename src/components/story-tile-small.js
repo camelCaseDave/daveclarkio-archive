@@ -36,19 +36,14 @@ const Title = styled.h4`
   overflow: hidden;
 `;
 
-const Date = styled.h5`
-  margin: 0;
-  font-weight: normal;
-`;
-
-const StoryTileSmall = ({ title, imageData }) => {
+const StoryTileSmall = ({ title }) => {
   return (
     <Container>
       <TextWrapper>
         <Title>{title}</Title>
       </TextWrapper>
       <ImageWrapper>
-        <InlineImage url={imageData.src} />
+        <InlineImage url="../content/03-05-17/coding.jppg" />
       </ImageWrapper>
     </Container>
   );

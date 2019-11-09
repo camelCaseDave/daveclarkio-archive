@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../config/theme";
 import FlatLink from "../components/flat-link";
+import logo from "../images/favicon.png";
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   border-bottom: 1px solid black;
 
@@ -16,9 +17,30 @@ const Container = styled.div`
   }
 `;
 
+const Separator = styled.svg`
+  margin-left: 1em;
+  margin-right: 1em;
+`;
+
+const Logo = styled.img`
+  height: 2em;
+`;
+
 const Header = () => {
   return (
     <Container>
+      <FlatLink to={"/"}>
+        <Logo src={logo} alt="Dave Clark IO" />
+      </FlatLink>
+      <Separator width="2" height="29">
+        <path
+          d="M1 29V1"
+          stroke="black"
+          stroke-width="0.5"
+          fill="none"
+          stroke-linecap="round"
+        ></path>
+      </Separator>
       <FlatLink to={"/"}>
         <h1>Dave Clark</h1>
       </FlatLink>

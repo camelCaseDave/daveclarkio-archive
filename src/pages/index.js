@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../layouts/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
@@ -7,7 +8,6 @@ import Bio from "../components/bio";
 import BlockHeading from "../components/block-heading";
 import StoryList from "../components/story-list";
 import PopularList from "../components/popular-list";
-import { graphql } from "gatsby";
 import { theme } from "../../config/theme";
 
 const Container = styled.div`

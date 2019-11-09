@@ -21,6 +21,10 @@ const Description = styled.h3`
   color: grey;
   font-weight: normal;
   margin: 0;
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    font-size: 1em;
+  }
 `;
 
 const HeadlineImage = styled(Img)`

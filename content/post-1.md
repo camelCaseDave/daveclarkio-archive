@@ -5,6 +5,8 @@ date: 03/05/2017
 path: /blog/my-first-post
 ---
 
+<img src='coding.jpg' />
+
 Often we need to calculate the time between two dates, but <b>only take into account working hours</b>. Working hours usually fall somewhere between 09:00 - 17:00, Monday - Friday, and are defined in CRM via Entitlements and SLAs. There's no way to achieve this out of the box, therefore custom code must be written for this calculation within a plugin or a workflow.
 
 <p>

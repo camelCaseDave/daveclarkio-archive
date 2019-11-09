@@ -13,8 +13,18 @@ const Wrapper = styled.div`
   margin-top: 2rem;
 `;
 
+const Title = styled.h1`
+  margin-bottom: 0;
+`;
+
 const Description = styled.h3`
   color: grey;
+  font-weight: 500;
+  margin-top: 1em;
+`;
+
+const Date = styled.div`
+  margin-bottom: 2rem;
 `;
 
 const Post = ({ data, pageContext }) => {
@@ -25,9 +35,9 @@ const Post = ({ data, pageContext }) => {
     <Layout>
       <Wrapper>
         <SEO title={title} pathname={path} article />
-        <h1>{title}</h1>
+        <Title>{title}</Title>
         <Description>{description}</Description>
-        {date}
+        <Date>{date}</Date>
         <div>
           <Content input={html} />
         </div>

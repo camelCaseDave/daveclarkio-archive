@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import prism from "../styles/prism";
+import { theme } from "../../config/theme";
 
 const Wrapper = styled.div`
   ${prism};
@@ -17,15 +18,24 @@ const Wrapper = styled.div`
     }
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {
-    color: black;
-    box-shadow: inset 0 -2px 0 #3498db;
-    border-bottom: 1px solid #3498db;
-    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     text-decoration: none;
+    box-shadow: inset 0 -2px 0 ${theme.colours.blue.dark};
+    border-bottom: 1px solid ${theme.colours.blue.dark};
+    color: ${theme.colours.black.base};
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    background-size: 100% 200%;
+    background-position: 0 -100%;
+    background-image: linear-gradient(
+      to top,
+      transparent 50%,
+      ${theme.colours.blue.dark} 50%
+    );
     &:hover,
     &:focus {
-      background: #3498db;
-      color: black;
+      color: #fff;
+      background-position: 0 0;
     }
   }
   img {

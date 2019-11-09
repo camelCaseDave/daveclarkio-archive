@@ -28,6 +28,9 @@ const Wrapper = styled.div`
       color: black;
     }
   }
+  img {
+    width: 100%;
+  }
   h1 {
     margin-top: 3rem;
   }

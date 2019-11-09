@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../config/theme";
 import InlineImage from "./inline-image";
+import FlatLink from "./flat-link";
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -31,7 +32,8 @@ const Description = styled.h4`
   color: grey;
   font-weight: normal;
 
-  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints.m}) {
+  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
+      .m}) {
     margin-bottom: 1em;
   }
 
@@ -55,16 +57,22 @@ const Date = styled.h4`
   }
 `;
 
-const StoryTileBig = ({ title, description, date, cover }) => {
+const StoryTileBig = ({ title, description, date, cover, path }) => {
   return (
     <Container>
       <TextWrapper>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
+        <Title>
+          <FlatLink to={path}>{title}</FlatLink>
+        </Title>
+        <Description>
+          <FlatLink to={path}>{description}</FlatLink>
+        </Description>
         <Date>{date}</Date>
       </TextWrapper>
       <ImageWrapper>
-        <InlineImage url={cover.src} />
+        <FlatLink to={path}>
+          <InlineImage url={cover.src} />
+        </FlatLink>
       </ImageWrapper>
     </Container>
   );

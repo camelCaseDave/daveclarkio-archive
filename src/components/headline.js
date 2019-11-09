@@ -2,11 +2,13 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { theme } from "../../config/theme";
+import FlatLink from "../components/flat-link";
 
 const Title = styled.h1`
   margin-bottom: 0.25em;
 
-  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints.m}) {
+  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
+      .m}) {
     font-size: 1.75em;
   }
 
@@ -29,11 +31,20 @@ const HeadlineImage = styled(Img)`
 `;
 
 const Headline = ({ data }) => {
+  console.log(data);
   return (
     <>
-      <HeadlineImage fluid={data.frontmatter.cover.childImageSharp.fluid} />
-      <Title>{data.frontmatter.title}</Title>
-      <Description>{data.frontmatter.description}</Description>
+      <FlatLink to={data.frontmatter.path}>
+        <HeadlineImage fluid={data.frontmatter.cover.childImageSharp.fluid} />
+      </FlatLink>
+      <Title>
+        <FlatLink to={data.frontmatter.path}>{data.frontmatter.title}</FlatLink>
+      </Title>
+      <Description>
+        <FlatLink to={data.frontmatter.path}>
+          {data.frontmatter.description}
+        </FlatLink>
+      </Description>
     </>
   );
 };

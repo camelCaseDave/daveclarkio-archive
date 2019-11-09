@@ -27,14 +27,14 @@ const Date = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Post = ({ data, pageContext }) => {
+const Post = ({ data }) => {
   const { html, frontmatter } = data.markdownRemark;
-  const { date, title, path, description } = frontmatter;
+  const { date, title, path, description, cover } = frontmatter;
 
   return (
     <Layout>
       <Wrapper>
-        <SEO title={title} pathname={path} article />
+        <SEO title={title} pathname={path} article banner={cover} description={description}/>
         <Title>{title}</Title>
         <Description>{description}</Description>
         <Date>{date}</Date>
@@ -57,7 +57,7 @@ export const query = graphql`
     markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
       html
       frontmatter {
-        date
+        date(formatString: "MMM Do YYYY")
         title
         description
       }

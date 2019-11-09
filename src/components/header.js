@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../config/theme";
+import FlatLink from "../components/flat-link";
 
 const Container = styled.div`
   display: flex;
@@ -18,7 +19,9 @@ const Container = styled.div`
 const Header = () => {
   return (
     <Container>
-      <h1>Dave Clark</h1>      
+      <FlatLink to={"/"}>
+        <h1>Dave Clark</h1>
+      </FlatLink>
     </Container>
   );
 };

@@ -10,7 +10,6 @@ const Wrapper = styled.div`
     letter-spacing: -0.003em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    font-size: 1.15rem;
     line-height: 2;
     code {
       padding: 0.2rem 0.5rem;
@@ -19,9 +18,13 @@ const Wrapper = styled.div`
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {
     color: black;
+    box-shadow: inset 0 -2px 0 #3498db;
+    border-bottom: 1px solid #3498db;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     text-decoration: none;
     &:hover,
     &:focus {
+      background: #3498db;
       color: black;
     }
   }

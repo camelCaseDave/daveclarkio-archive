@@ -5,22 +5,33 @@ import Layout from "../layouts/layout";
 import Content from "../layouts/content";
 import SEO from "../components/seo";
 import "../styles/prism";
+import styled from "@emotion/styled";
+
+const Wrapper = styled.div`
+  max-width: 680px;
+  margin: auto;
+  margin-top: 2rem;
+`;
+
+const Description = styled.h3`
+  color: grey;
+`;
 
 const Post = ({ data, pageContext }) => {
   const { html, frontmatter } = data.markdownRemark;
-  const { date, title, path } = frontmatter;
+  const { date, title, path, description } = frontmatter;
 
   return (
     <Layout>
-      <SEO
-        title={title}
-        pathname={path}
-        article
-      />
-     {title} {date}
-      <div>
-        <Content input={html} />
-      </div>     
+      <Wrapper>
+        <SEO title={title} pathname={path} article />
+        <h1>{title}</h1>
+        <Description>{description}</Description>
+        {date}
+        <div>
+          <Content input={html} />
+        </div>
+      </Wrapper>
     </Layout>
   );
 };
@@ -38,6 +49,7 @@ export const query = graphql`
       frontmatter {
         date
         title
+        description
       }
     }
   }

@@ -8,7 +8,7 @@ const Heading = styled.h2`
 const Bio = () => (
   <>
     <Heading>About Dave</Heading>
-    <p>Some text about Dave he's a good guy blah blah</p>
+    <p>Hi I'm Dave, a full stack developer and consultant for Microsoft Power Platform software solutions.</p>
   </>
 );
 

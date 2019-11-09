@@ -51,14 +51,16 @@ const RightContainer = styled.div`
 
 const IndexPage = ({data}) => {
   const { edges } = data.allMarkdownRemark;
+  const headline = edges.find(e => e.node.frontmatter.headline === true).node;
+  const latest = edges.filter(e => e.node.frontmatter.headline !== true);
 
   return (
     <Layout>
       <SEO title="Home | Dave Clark" />
       <Container>
         <Left>
-          <Headline data={edges[0].node} />
-          <StoryList data={edges.slice(1)} />
+          <Headline data={headline} />
+          <StoryList data={latest} />
         </Left>
         <Right>
           <RightContainer>
@@ -86,7 +88,8 @@ export const query = graphql`
           frontmatter {
             title
             path
-            date
+            date(formatString: "MMM Do YYYY")
+            headline
             description
             cover {
               childImageSharp {

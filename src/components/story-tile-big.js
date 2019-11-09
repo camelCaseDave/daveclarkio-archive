@@ -55,13 +55,13 @@ const Date = styled.h4`
   }
 `;
 
-const StoryTileBig = ({ title, description, timeToRead, cover }) => {
+const StoryTileBig = ({ title, description, date, cover }) => {
   return (
     <Container>
       <TextWrapper>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <Date>Nov 7th</Date>
+        <Date>{date}</Date>
       </TextWrapper>
       <ImageWrapper>
         <InlineImage url={cover.src} />

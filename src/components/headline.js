@@ -35,7 +35,6 @@ const HeadlineImage = styled(Img)`
 `;
 
 const Headline = ({ data }) => {
-  console.log(data);
   return (
     <>
       <FlatLink to={data.frontmatter.path}>

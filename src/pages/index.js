@@ -56,7 +56,12 @@ const RightContainer = styled.div`
 const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   const headline = edges.find(e => e.node.frontmatter.headline === true).node;
-  const latest = edges.filter(e => e.node.frontmatter.headline !== true);
+  const latest = edges.filter(
+    e =>
+      e.node.frontmatter.headline !== true &&
+      e.node.frontmatter.popular !== true
+  );
+  const popular = edges.filter(e => e.node.frontmatter.popular === true);
 
   return (
     <Layout>
@@ -70,7 +75,7 @@ const IndexPage = ({ data }) => {
           <RightContainer>
             <Bio />
             <BlockHeading text="popular" />
-            <PopularList />
+            <PopularList data={popular} />
           </RightContainer>
         </Right>
       </Container>
@@ -91,6 +96,7 @@ export const query = graphql`
             path
             date(formatString: "MMM Do YYYY")
             headline
+            popular
             description
             cover {
               childImageSharp {

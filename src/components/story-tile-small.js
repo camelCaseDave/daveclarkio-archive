@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../config/theme";
 import InlineImage from "./inline-image";
+import FlatLink from "./flat-link";
 
 const ImageWrapper = styled.div`
   flex-basis: 25%;
@@ -15,7 +16,8 @@ const Container = styled.div`
   padding-top: 1em;
   padding-bottom: 1em;
 
-  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints.m}) {
+  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
+      .m}) {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
   }
@@ -36,14 +38,18 @@ const Title = styled.h4`
   overflow: hidden;
 `;
 
-const StoryTileSmall = ({ title }) => {
+const StoryTileSmall = ({ title, cover, path }) => {
   return (
     <Container>
       <TextWrapper>
-        <Title>{title}</Title>
+        <Title>
+          <FlatLink to={path}>{title}</FlatLink>
+        </Title>
       </TextWrapper>
       <ImageWrapper>
-        <InlineImage url="../content/03-05-17/coding.jppg" />
+        <FlatLink to={path}>
+          <InlineImage url={cover ? cover.src : ""} />
+        </FlatLink>
       </ImageWrapper>
     </Container>
   );

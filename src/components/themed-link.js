@@ -1,13 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import FlatLink from "./flat-link";
 import { theme } from "../../config/theme";
-import ThemedLink from "./themed-link";
 
-const Heading = styled.h2`
-  margin: 0;
-`;
-
-const ReadMore = styled.span`
+const StyledLink = styled.span`
     text-decoration: none;
     box-shadow: inset 0 -2px 0 ${theme.colours.blue.dark};
     border-bottom: 1px solid ${theme.colours.blue.dark};
@@ -30,15 +26,10 @@ const ReadMore = styled.span`
   }
 `;
 
-const Bio = () => (
-  <>
-    <Heading>About Dave</Heading>
-    <p>
-      Hi I'm Dave, a full stack developer and consultant for Microsoft Power
-      Platform software solutions.
-    </p>
-    <ThemedLink text="Read more" path="/about" />
-  </>
+const ThemedLink = ({ text, path }) => (
+  <FlatLink to={path}>
+    <StyledLink>{text}</StyledLink>
+  </FlatLink>
 );
 
-export default Bio;
+export default ThemedLink;

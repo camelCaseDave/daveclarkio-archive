@@ -9,7 +9,7 @@ import styled from "styled-components";
 const GlobalStyle = createGlobalStyle`
   html {
     background-color: ${theme.colours.white.base};
-    font-family: Helvetica;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     color: ${theme.colours.black.base};
   }
   body {

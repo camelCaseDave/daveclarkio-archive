@@ -28,7 +28,7 @@ const Description = styled.h4`
 `;
 
 const HeadlineImage = styled(Img)`
-  height: 435px;
+  height: 407px;
   @media (max-width: ${theme.breakpoints.m}) {
     margin-left: -1em;
     margin-right: -1em;

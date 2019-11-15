@@ -8,7 +8,6 @@ import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background-color: ${theme.colours.white.base};
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     color: ${theme.colours.black.base};
   }
@@ -18,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
     margin-left: auto;
     margin-right: auto;
   }    
+
+  p, h3, h4 {
+    line-height: 1.5;
+  }
 `;
 
 const Wrapper = styled.div`

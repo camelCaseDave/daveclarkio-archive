@@ -6,54 +6,53 @@ import FlatLink from "./flat-link";
 
 const ImageWrapper = styled.div`
   width: 100%;
-  flex-basis: 25%;
+  flex-basis: 20%;
 `;
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
   padding-top: 2em;
+  min-height: 148px;
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    min-height: auto;
+  }
 `;
 
 const TextWrapper = styled.div`
-  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80%;
   padding-right: 2rem;
 `;
 
 const Title = styled.h3`
   margin: 0;
-  margin-bottom: 0.5em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   text-overflow: ellipsis;
   overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    font-size: 1em;
+  }
 `;
 
 const Description = styled.h4`
   margin: 0;
-  margin-bottom: 2em;
   color: grey;
   font-weight: normal;
-
-  @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
-      .m}) {
-    margin-bottom: 1em;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.m}) {
-    font-size: 1em;
-    margin-bottom: 1em;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    font-size: 0.8em;
     -webkit-line-clamp: 2;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    margin-bottom: 0.5em;
   }
 `;
 
@@ -66,17 +65,28 @@ const Date = styled.h4`
   }
 `;
 
+const MetaWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`;
+
 const StoryTileBig = ({ title, description, date, cover, path }) => {
   return (
     <Container>
       <TextWrapper>
-        <Title>
-          <FlatLink to={path}>{title}</FlatLink>
-        </Title>
-        <Description>
-          <FlatLink to={path}>{description}</FlatLink>
-        </Description>
-        <Date>{date}</Date>
+        <div>
+          <Title>
+            <FlatLink to={path}>{title}</FlatLink>
+          </Title>
+        </div>
+        <MetaWrapper>
+          <Description>
+            <FlatLink to={path}>{description}</FlatLink>
+          </Description>
+          <Date>{date}</Date>
+        </MetaWrapper>
       </TextWrapper>
       <ImageWrapper>
         <FlatLink to={path}>

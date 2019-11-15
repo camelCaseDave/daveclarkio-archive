@@ -18,7 +18,6 @@ const PopularList = ({ data }) => {
           />
         );
       })}
-      <StoryTileSmall title="More content coming January 2020!" />
     </>
   );
 };

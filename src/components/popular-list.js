@@ -5,7 +5,6 @@ const PopularList = ({ data }) => {
   return (
     <>
       {data.map(({ node }) => {
-        console.log(data);
         const { id, frontmatter } = node;
         const { title, description, cover, path } = frontmatter;
 

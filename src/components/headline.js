@@ -17,7 +17,7 @@ const Title = styled.h1`
   }
 `;
 
-const Description = styled.h3`
+const Description = styled.h4`
   color: grey;
   font-weight: normal;
   margin: 0;
@@ -28,9 +28,11 @@ const Description = styled.h3`
 `;
 
 const HeadlineImage = styled(Img)`
+  height: 419px;
   @media (max-width: ${theme.breakpoints.m}) {
     margin-left: -1em;
     margin-right: -1em;
+    height: 280px;
   }
 `;
 

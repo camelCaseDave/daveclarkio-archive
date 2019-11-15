@@ -12,8 +12,7 @@ const ImageWrapper = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 2em;
 `;
 
 const TextWrapper = styled.div`
@@ -40,6 +39,11 @@ const Description = styled.h4`
   @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
       .m}) {
     margin-bottom: 1em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   @media (max-width: ${theme.breakpoints.m}) {

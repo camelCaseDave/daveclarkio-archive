@@ -13,13 +13,11 @@ const ImageWrapper = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 2em;
 
   @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
       .m}) {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 1em;
   }
 `;
 

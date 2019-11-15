@@ -8,22 +8,32 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid ${theme.colours.black.base};
+  height: 3.5em;
+  margin-bottom: 3.5em;
 
-  @media (max-width: ${theme.breakpoints.m}) {
+  h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-left: 0.5em;
+  }
+
+  @media (max-width: ${theme.breakpoints.m}) {   
+    margin-bottom: 0em;
     h1 {
-      font-size: 1.5em;
+      margin-left: 0.5em;
+      display: table-caption;
+      font-size: 1em;
+    }
+
+    img {
+      font-size: 1.25em;
     }
   }
 `;
 
-const Separator = styled.svg`
-  margin-left: 1em;
-  margin-right: 1em;
-`;
-
 const Logo = styled.img`
-  height: 2em;
+  height: 1.5em;
 `;
 
 const StyledFlatLink = styled(FlatLink)`
@@ -36,15 +46,6 @@ const Header = () => {
       <StyledFlatLink to={"/"}>
         <Logo src={logo} alt="Dave Clark IO" />
       </StyledFlatLink>
-      <Separator width="2" height="29">
-        <path
-          d="M1 29V1"
-          stroke="black"
-          stroke-width="0.5"
-          fill="none"
-          stroke-linecap="round"
-        ></path>
-      </Separator>
       <FlatLink to={"/"}>
         <h1>Dave Clark</h1>
       </FlatLink>

@@ -7,7 +7,8 @@ const StoryList = ({ data }) => {
     <>
       <BlockHeading text="latest" />
       {data.map(({ node }) => {
-        const { id, frontmatter } = node;
+        const { id, frontmatter, fields } = node;
+        const readingTime = fields.readingTime.text;
         const { cover, path, title, date, description } = frontmatter;
         return (
           <StoryTileBig
@@ -17,6 +18,7 @@ const StoryList = ({ data }) => {
             title={title}
             description={description}
             date={date}
+            readingTime={readingTime}
           />
         );
       })}

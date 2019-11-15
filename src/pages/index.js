@@ -91,6 +91,11 @@ export const query = graphql`
       edges {
         node {
           id
+          fields {
+            readingTime {
+              text
+            }
+          }
           frontmatter {
             title
             path

@@ -6,6 +6,7 @@ import Content from "../layouts/content";
 import SEO from "../components/seo";
 import "../styles/prism";
 import styled from "@emotion/styled";
+import DotSeparator from "../components/dot-separator";
 
 const Wrapper = styled.div`
   max-width: 680px;
@@ -19,25 +20,36 @@ const Title = styled.h1`
 
 const Description = styled.h3`
   color: grey;
-  font-weight: 500;
+  font-weight: normal;
   margin-top: 1em;
 `;
 
-const Date = styled.div`
+const Meta = styled.div`
   margin-bottom: 2rem;
 `;
 
 const Post = ({ data }) => {
-  const { html, frontmatter } = data.markdownRemark;
+  const { html, frontmatter, fields } = data.markdownRemark;
+  const readingTime = fields.readingTime.text;
   const { date, title, path, description, cover } = frontmatter;
-
+  console.log(data);
   return (
     <Layout>
       <Wrapper>
-        <SEO title={title} pathname={path} article banner={cover} description={description}/>
+        <SEO
+          title={title}
+          pathname={path}
+          article
+          banner={cover}
+          description={description}
+        />
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <Date>{date}</Date>
+        <Meta>
+          {date}
+          <DotSeparator />
+          {readingTime}{" "}
+        </Meta>
         <div>
           <Content input={html} />
         </div>
@@ -56,6 +68,11 @@ export const query = graphql`
   query($pathSlug: String!) {
     markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
       html
+      fields {
+        readingTime {
+          text
+        }
+      }
       frontmatter {
         date(formatString: "MMM Do YYYY")
         title

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { theme } from "../../config/theme";
 import InlineImage from "./inline-image";
 import FlatLink from "./flat-link";
+import DotSeparator from "./dot-separator";
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -35,7 +36,7 @@ const Title = styled.h3`
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.m}) {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 `;
 
@@ -56,7 +57,7 @@ const Description = styled.h4`
   }
 `;
 
-const Date = styled.h4`
+const Footer = styled.h4`
   margin: 0;
   font-weight: normal;
 
@@ -72,7 +73,14 @@ const MetaWrapper = styled.div`
   height: 100%;
 `;
 
-const StoryTileBig = ({ title, description, date, cover, path }) => {
+const StoryTileBig = ({
+  title,
+  description,
+  date,
+  cover,
+  path,
+  readingTime,
+}) => {
   return (
     <Container>
       <TextWrapper>
@@ -85,7 +93,9 @@ const StoryTileBig = ({ title, description, date, cover, path }) => {
           <Description>
             <FlatLink to={path}>{description}</FlatLink>
           </Description>
-          <Date>{date}</Date>
+          <Footer>
+            {date}<DotSeparator/>{readingTime}
+          </Footer>
         </MetaWrapper>
       </TextWrapper>
       <ImageWrapper>

@@ -32,7 +32,9 @@ const ReadMore = styled.span`
 
 const Bio = () => (
   <>
-    <Heading>About Dave</Heading>
+    <div>
+      <Heading>About Dave</Heading>
+    </div>
     <p>
       Hi I'm Dave, a full stack developer and consultant for Microsoft Power
       Platform software solutions.

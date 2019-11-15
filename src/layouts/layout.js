@@ -4,7 +4,7 @@ import { createGlobalStyle } from "styled-components";
 import Header from "../components/header";
 import SEO from "../components/seo";
 import { theme } from "../../config/theme";
-import styled from "styled-components";
+import Wrapper from "../components/wrapper";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -13,23 +13,15 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    max-width: 1192px;
+    max-width: ${theme.breakpoints.l};
     margin-left: auto;
     margin-right: auto;
   }    
-
+  h1, h2 {
+    font-weight: 600;
+  }
   p, h3, h4 {
     line-height: 1.5;
-  }
-`;
-
-const Wrapper = styled.div`
-  padding-right: 1rem;
-  padding-left: 1rem;
-
-  @media (max-width ${theme.breakpoints.m}) and (min-width: ${theme.breakpoints.s}) {
-    padding-left: 24px;
-    padding-right: 24px;
   }
 `;
 

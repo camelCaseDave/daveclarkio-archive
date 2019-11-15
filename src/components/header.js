@@ -13,6 +13,7 @@ const Container = styled.div`
   margin-bottom: 3.5em;
 
   h1 {
+    font-weight: 300;
     font-size: 1.5em;
     margin: 0;
     margin-left: 0.5em;
@@ -24,6 +25,7 @@ const Container = styled.div`
       margin-left: 0.5em;
       display: table-caption;
       font-size: 1em;
+      font-weight: 500;
     }
 
     img {

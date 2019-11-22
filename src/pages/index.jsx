@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../layouts/layout";
 import SEO from "../components/seo";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Headline from "../components/headline";
 import Bio from "../components/bio";
 import BlockHeading from "../components/block-heading";

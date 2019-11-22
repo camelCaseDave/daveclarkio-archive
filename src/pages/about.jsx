@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../layouts/layout";
 import SEO from "../components/seo";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { theme } from "../../config/theme";
 
 const Container = styled.div`

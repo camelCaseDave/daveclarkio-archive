@@ -32,7 +32,7 @@ const Post = ({ data }) => {
   const { html, frontmatter, fields } = data.markdownRemark;
   const readingTime = fields.readingTime.text;
   const { date, title, path, description, cover } = frontmatter;
-  console.log(data);
+  
   return (
     <Layout>
       <Wrapper>

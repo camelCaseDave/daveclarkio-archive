@@ -1,8 +1,8 @@
 import React from "react";
 import Img from "gatsby-image";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { theme } from "../../config/theme";
-import FlatLink from "../components/flat-link";
+import FlatLink from "./flat-link";
 
 const Title = styled.h1`
   margin-bottom: 0.25em;

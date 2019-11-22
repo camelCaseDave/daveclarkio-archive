@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-const InlineImage = styled.a`
+const InlineImage = styled.img`
   background-image: url(${props => props.url});
   background-position: 50% 50%;
   background-size: cover;

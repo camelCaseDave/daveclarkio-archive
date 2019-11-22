@@ -4,8 +4,8 @@ import { theme } from "../../config/theme";
 import { links } from "../../config/links";
 import logo from "../images/logo-white.svg";
 import Wrapper from "./wrapper";
-import FlatLink from "../components/flat-link";
-import DotSeparator from "../components/dot-separator";
+import FlatLink from "./flat-link";
+import DotSeparator from "./dot-separator";
 
 const Container = styled.div`
   color: white;

@@ -1,5 +1,5 @@
 import React from "react";
-import StoryTileSmall from "../components/story-tile-small";
+import StoryTileSmall from "./story-tile-small";
 
 const PopularList = ({ data }) => {
   return (

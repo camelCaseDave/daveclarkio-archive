@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { theme } from "../../config/theme";
+import BellIcon from "react-bell-icon";
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Button = styled.a`
-  color: white;
+  color: ${props => props.colour};
   background-color: ${props => props.backgroundColour};
   width: 100%;
   height: 26px;
@@ -43,6 +44,18 @@ const Button = styled.a`
     height: 100%;
     width: 100%;
     vertical-align: middle;
+    @media (max-width: ${theme.breakpoints.m}) {
+      display: none;
+    }
+  }
+`;
+
+const StyledBellIcon = styled(BellIcon)`
+  display: none;
+  margin-top: 0.29em;
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    display: inline-block;
   }
 `;
 
@@ -50,6 +63,13 @@ const Subscribe = ({ colour, backgroundColour }) => (
   <Container>
     <Button colour={colour} backgroundColour={backgroundColour}>
       <span>SUBSCRIBE</span>
+      <StyledBellIcon
+        width="20"
+        height="20"
+        color={theme.colours.white.base}
+        active={true}
+        animate={false}
+      />
     </Button>
   </Container>
 );

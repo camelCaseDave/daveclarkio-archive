@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { theme } from "../../config/theme";
 import BellIcon from "react-bell-icon";
+import SubscribeModal from "./subscribe-modal";
 
 const Container = styled.div`
   display: flex;
@@ -43,6 +44,7 @@ const Button = styled.a`
   span {
     height: 100%;
     width: 100%;
+    letter-spacing: 0.1em;
     vertical-align: middle;
     @media (max-width: ${theme.breakpoints.m}) {
       display: none;
@@ -59,19 +61,35 @@ const StyledBellIcon = styled(BellIcon)`
   }
 `;
 
-const Subscribe = ({ colour, backgroundColour }) => (
-  <Container>
-    <Button colour={colour} backgroundColour={backgroundColour}>
-      <span>SUBSCRIBE</span>
-      <StyledBellIcon
-        width="20"
-        height="20"
-        color={theme.colours.white.base}
-        active={true}
-        animate={false}
-      />
-    </Button>
-  </Container>
-);
+const Subscribe = ({ colour, backgroundColour }) => {
+  const [show, setShow] = useState(false);
+
+  const handleClick = () => {
+    setShow(!show);
+  };
+
+  return (
+    <>
+      <Container>
+        <Button
+          colour={colour}
+          backgroundColour={backgroundColour}
+          type="button"
+          onClick={handleClick}
+        >
+          <span>Subscribe</span>
+          <StyledBellIcon
+            width="20"
+            height="20"
+            color={theme.colours.white.base}
+            active={true}
+            animate={false}
+          />
+        </Button>
+        <SubscribeModal show={show} />
+      </Container>
+    </>
+  );
+};
 
 export default Subscribe;

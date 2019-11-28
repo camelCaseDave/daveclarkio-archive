@@ -2,6 +2,7 @@ import { theme } from "../../config/theme";
 import styled from "@emotion/styled";
 
 const Wrapper = styled.div`
+  z-index: -1;
   margin: 0;
   max-width: ${theme.breakpoints.l};
   margin-left: auto;

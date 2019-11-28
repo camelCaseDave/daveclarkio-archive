@@ -23,12 +23,14 @@ const StyledWrapper = styled(Wrapper)`
 const Links = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 1em;
-  font-weight: 400;
+  font-weight: 500;
+  height: 7em;
+  justify-content: space-evenly;
+`;
 
-  a {
-    padding-bottom: 0.1em;
-  }
+const Divider = styled.div`
+  width: 100%;
+  border-bottom: 1px solid white;
 `;
 
 const Footer = () => (
@@ -36,6 +38,9 @@ const Footer = () => (
     <StyledWrapper>
       <Logo src={logo} colour={theme.colours.white.base} />
     </StyledWrapper>
+    <Wrapper>
+      <Divider />
+    </Wrapper>
     <Wrapper>
       <Links>
         <FlatLink to="/about">About</FlatLink>

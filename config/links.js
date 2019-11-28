@@ -1,4 +1,5 @@
 export const links = {
   chorus: "https://www.chorus.co/",
-  linkedIn: "https://www.linkedin.com/in/davidjbclark/",
+  linkedin: "https://www.linkedin.com/in/davidjbclark/",
+  github: "https://github.com/camelCaseDave",
 };

@@ -7,6 +7,7 @@ import { theme } from "../../config/theme";
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
+  height: calc(100vh - 17.5em);
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 2rem;
@@ -17,16 +18,14 @@ const Container = styled.div`
 `;
 
 const AboutPage = () => {
-  
   return (
     <Layout>
       <SEO title="About | Dave Clark" />
       <Container>
-          <h1>Coming soon!</h1>
+        <h1>Coming soon!</h1>
       </Container>
     </Layout>
   );
 };
 
 export default AboutPage;
-

@@ -10,6 +10,12 @@ const Container = styled.div`
   color: ${props => props.colour};
   align-items: center;
   height: 3.5em;
+  flex-basis: 66.66667%;
+  flex-grow: 0;
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    flex-basis: 80%;
+  }
 `;
 
 const Title = styled.div`

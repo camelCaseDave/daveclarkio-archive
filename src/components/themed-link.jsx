@@ -5,6 +5,7 @@ import { theme } from "../../config/theme";
 
 const StyledLink = styled.span`
     text-decoration: none;
+  font-weight: 600;
     box-shadow: inset 0 -2px 0 ${theme.colours.blue.dark};
     border-bottom: 1px solid ${theme.colours.blue.dark};
     color: ${theme.colours.black.base};
@@ -26,8 +27,8 @@ const StyledLink = styled.span`
   }
 `;
 
-const ThemedLink = ({ text, path }) => (
-  <FlatLink to={path}>
+const ThemedLink = ({ className, text, path }) => (
+  <FlatLink className={className} to={path}>
     <StyledLink>{text}</StyledLink>
   </FlatLink>
 );

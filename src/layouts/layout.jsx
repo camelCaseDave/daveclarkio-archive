@@ -4,6 +4,7 @@ import Header from "../components/header";
 import SEO from "../components/seo";
 import Wrapper from "../components/wrapper";
 import GlobalStyle from "../styles/global-style";
+import Footer from "../components/footer";
 
 const Layout = ({ children }) => {
   return (
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
         <Header />
         <main>{children}</main>
       </Wrapper>
+      <Footer />
     </>
   );
 };

@@ -12,10 +12,7 @@ const GlobalStyle = props => (
           color: ${theme.colours.black.base};
         }
         body {
-          margin: 0;
-          max-width: ${theme.breakpoints.l};
-          margin-left: auto;
-          margin-right: auto;
+          margin:0;
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;
         }

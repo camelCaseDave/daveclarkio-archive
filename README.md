@@ -25,10 +25,10 @@
 
 ## Tech Stack
 
--   Built with [GatsbyJS](https://www.gatsbyjs.org/) and [React](https://github.com/facebook/react)
--   Styled with [emotion](https://emotion.sh/docs/introduction)
--   Formatted with [Prettier](https://github.com/prettier/prettier)
--   Hosted on [Netlify](https://www.netlify.com/)
+- Built with [GatsbyJS](https://www.gatsbyjs.org/) and [React](https://github.com/facebook/react)
+- Styled with [emotion](https://emotion.sh/docs/introduction)
+- Formatted with [Prettier](https://github.com/prettier/prettier)
+- Hosted on [Netlify](https://www.netlify.com/)
 
 ## License
 

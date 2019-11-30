@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import BellIcon from "react-bell-icon";
 
@@ -94,3 +95,8 @@ const Subscribe = ({ colour, backgroundColour }) => {
 };
 
 export default Subscribe;
+
+Subscribe.propTypes = {
+  colour: PropTypes.string,
+  backgroundColour: PropTypes.string,
+};

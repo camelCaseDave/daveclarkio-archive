@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { theme } from "../../config/theme";
@@ -111,3 +112,14 @@ const StoryTileBig = ({
 };
 
 export default StoryTileBig;
+
+StoryTileBig.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  date: PropTypes.string,
+  cover: {
+    src: PropTypes.string,
+  },
+  path: PropTypes.string,
+  readingTime: PropTypes.string,
+};

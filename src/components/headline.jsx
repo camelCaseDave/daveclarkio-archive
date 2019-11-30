@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { theme } from "../../config/theme";
@@ -56,3 +57,18 @@ const Headline = ({ data }) => {
 };
 
 export default Headline;
+
+Headline.propTypes = {
+  data: {
+    frontmatter: {
+      cover: {
+        childImageSharp: {
+          fluid: PropTypes.string,
+        },
+      },
+      title: PropTypes.string,
+      path: PropTypes.string,
+      description: PropTypes.string,
+    },
+  },
+};

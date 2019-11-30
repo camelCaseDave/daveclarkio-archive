@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { theme } from "../../config/theme";
@@ -52,6 +53,14 @@ const StoryTileSmall = ({ title, cover, path }) => {
       </ImageWrapper>
     </Container>
   );
+};
+
+StoryTileSmall.propTypes = {
+  title: PropTypes.string,
+  cover: {
+    src: PropTypes.string,
+  },
+  path: PropTypes.string,
 };
 
 export default StoryTileSmall;

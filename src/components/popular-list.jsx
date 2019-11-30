@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import StoryTileSmall from "./story-tile-small";
@@ -24,3 +25,9 @@ const PopularList = ({ data }) => {
 };
 
 export default PopularList;
+
+PopularList.propTypes = {
+  data: {
+    map: PropTypes.func,
+  },
+};

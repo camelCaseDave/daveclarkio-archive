@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { theme } from "../../config/theme";
@@ -33,5 +34,11 @@ const ThemedLink = ({ className, text, path }) => (
     <StyledLink>{text}</StyledLink>
   </FlatLink>
 );
+
+ThemedLink.propTypes = {
+  className: PropTypes.string,
+  text: PropTypes.string,
+  path: PropTypes.string,
+};
 
 export default ThemedLink;

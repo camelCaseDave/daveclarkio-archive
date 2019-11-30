@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import BlockHeading from "./block-heading";
@@ -28,3 +29,9 @@ const StoryList = ({ data }) => {
 };
 
 export default StoryList;
+
+StoryList.propTypes = {
+  data: {
+    map: PropTypes.func,
+  },
+};

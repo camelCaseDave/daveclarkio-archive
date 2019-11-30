@@ -88,6 +88,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Feedback = styled.div`
+  display: ${props => (props.when ? "block" : "none")};
   position: absolute;
   height: 26px;
   width: calc(${theme.breakpoints.l} / 3 - 4em);
@@ -122,6 +123,8 @@ const Feedback = styled.div`
 
 const SubscribeModal = props => {
   const [email, setEmail] = useState("");
+  const [feedback, setFeedback] = useState(false);
+  const [feedbackMsg, setFeedbackMsg] = useState("");
   const [showState, setShowState] = useState(props);
 
   useEffect(() => {
@@ -132,23 +135,29 @@ const SubscribeModal = props => {
     event.preventDefault();
     setShowState({ show: !showState.show });
 
-    addToMailchimp(email)
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    addToMailchimp(email).then(data => {
+      if (data.result === "error") {
+        setFeedback(!feedback);
+        setFeedbackMsg(data.msg);
+      } else {
+        setFeedback(!feedback);
+        setFeedbackMsg(data.msg);
+      }
+    });
   };
 
   const handleEmailChange = event => {
     setEmail(event.currentTarget.value);
   };
 
+  const hideFeedback = () => {
+    setTimeout(() => setFeedback(!feedback), 3000);
+  };
+
   return (
     <>
-      <Modal show={props.show}>
-        <Fade opposite when={showState.show}>
+      <Modal show={showState.show}>
+        <Fade opposite when={showState.show} duration={200}>
           <Form onSubmit={handleSubmit}>
             <input
               placeholder="Email address"
@@ -162,7 +171,11 @@ const SubscribeModal = props => {
           </Form>
         </Fade>
       </Modal>
-      <Feedback>Thanks for subscribing!</Feedback>
+      <Feedback when={feedback}>
+        <Fade opposite when={feedback} onReveal={() => hideFeedback()}>
+          {feedbackMsg}
+        </Fade>
+      </Feedback>
     </>
   );
 };

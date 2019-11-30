@@ -1,9 +1,10 @@
-import React from "react";
 import styled from "@emotion/styled";
+import React from "react";
+
 import { theme } from "../../config/theme";
-import InlineImage from "./inline-image";
-import FlatLink from "./flat-link";
 import DotSeparator from "./dot-separator";
+import FlatLink from "./flat-link";
+import InlineImage from "./inline-image";
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -94,7 +95,9 @@ const StoryTileBig = ({
             <FlatLink to={path}>{description}</FlatLink>
           </Description>
           <Footer>
-            {date}<DotSeparator/>{readingTime}
+            {date}
+            <DotSeparator />
+            {readingTime}
           </Footer>
         </MetaWrapper>
       </TextWrapper>

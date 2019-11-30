@@ -1,7 +1,8 @@
-import React from "react";
 import styled from "@emotion/styled";
-import FlatLink from "./flat-link";
+import React from "react";
+
 import { theme } from "../../config/theme";
+import FlatLink from "./flat-link";
 
 const StyledLink = styled.span`
     text-decoration: none;

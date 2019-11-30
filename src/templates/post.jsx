@@ -1,12 +1,14 @@
-import React from "react";
+import "../styles/prism";
+
+import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import Layout from "../layouts/layout";
-import Content from "../layouts/content";
-import SEO from "../components/seo";
-import "../styles/prism";
-import styled from "@emotion/styled";
+import React from "react";
+
 import DotSeparator from "../components/dot-separator";
+import SEO from "../components/seo";
+import Content from "../layouts/content";
+import Layout from "../layouts/layout";
 
 const Wrapper = styled.div`
   max-width: 680px;
@@ -32,7 +34,7 @@ const Post = ({ data }) => {
   const { html, frontmatter, fields } = data.markdownRemark;
   const readingTime = fields.readingTime.text;
   const { date, title, path, description, cover } = frontmatter;
-  
+
   return (
     <Layout>
       <Wrapper>

@@ -1,8 +1,9 @@
-import React from "react";
 import styled from "@emotion/styled";
+import React from "react";
+
 import { theme } from "../../config/theme";
-import InlineImage from "./inline-image";
 import FlatLink from "./flat-link";
+import InlineImage from "./inline-image";
 
 const ImageWrapper = styled.div`
   flex-basis: 25%;

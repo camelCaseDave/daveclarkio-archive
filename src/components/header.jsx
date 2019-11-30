@@ -1,9 +1,10 @@
-import React from "react";
 import styled from "@emotion/styled";
-import Logo from "../components/logo";
-import logo from "../images/favicon.png";
+import React from "react";
+
 import { theme } from "../../config/theme";
+import Logo from "../components/logo";
 import Subscribe from "../components/subscribe";
+import logo from "../images/favicon.png";
 
 const Container = styled.div`
   z-index: 1;

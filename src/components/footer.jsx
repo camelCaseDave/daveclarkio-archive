@@ -1,12 +1,13 @@
-import React from "react";
 import styled from "@emotion/styled";
-import { theme } from "../../config/theme";
+import React from "react";
+
 import { links } from "../../config/links";
-import logo from "../images/logo-white.svg";
-import Wrapper from "../components/wrapper";
-import Logo from "../components/logo";
-import FlatLink from "../components/flat-link";
+import { theme } from "../../config/theme";
 import ExternalLink from "../components/external-link";
+import FlatLink from "../components/flat-link";
+import Logo from "../components/logo";
+import Wrapper from "../components/wrapper";
+import logo from "../images/logo-white.svg";
 
 const Background = styled.div`
   width: 100%;

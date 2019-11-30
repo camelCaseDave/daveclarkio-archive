@@ -1,5 +1,6 @@
-import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
+import React from "react";
 
 const UnderlinedSection = styled.div`
   border-bottom: 1px solid black;
@@ -17,5 +18,9 @@ const BlockHeading = ({ text }) => (
     <h4>{text}</h4>
   </UnderlinedSection>
 );
+
+BlockHeading.propTypes = {
+  text: PropTypes.string,
+};
 
 export default BlockHeading;

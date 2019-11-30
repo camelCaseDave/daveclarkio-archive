@@ -1,27 +1,49 @@
 {
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "es6": true,
-      "node": true
-    },
-    "plugins": [
-      "react",
-      "react-hooks"
-    ],
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 2018
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["react", "react-hooks", "simple-import-sort", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/react",
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
       }
     },
-    "rules": {
-      "linebreak-style": ["error", "unix"],
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
+    "react": {
+      "version": "detect"
     }
-  }
+  },
+  "rules": {
+    "simple-import-sort/sort": "error",
+    "sort-imports": "off",
+    "prettier/prettier": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
+  },
+  "overrides": [
+    {
+      "files": "server/**/*.js",
+      "env": { "node": true },
+      "rules": {
+        "simple-import-sort/sort": "off",
+        "import/order": ["error", { "newlines-between": "always" }]
+      }
+    }
+  ]
+}

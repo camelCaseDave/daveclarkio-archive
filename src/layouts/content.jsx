@@ -1,8 +1,9 @@
-import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import prism from "../styles/prism";
+import React from "react";
+
 import { theme } from "../../config/theme";
+import prism from "../styles/prism";
 
 const Wrapper = styled.div`
   ${prism};

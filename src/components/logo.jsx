@@ -1,7 +1,8 @@
-import React from "react";
 import styled from "@emotion/styled";
-import { theme } from "../../config/theme";
 import PropTypes from "prop-types";
+import React from "react";
+
+import { theme } from "../../config/theme";
 import FlatLink from "./flat-link";
 
 const Container = styled.div`

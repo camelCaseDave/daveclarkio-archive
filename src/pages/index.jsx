@@ -1,14 +1,16 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../layouts/layout";
-import SEO from "../components/seo";
 import styled from "@emotion/styled";
-import Headline from "../components/headline";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+
+import { theme } from "../../config/theme";
 import Bio from "../components/bio";
 import BlockHeading from "../components/block-heading";
-import StoryList from "../components/story-list";
+import Headline from "../components/headline";
 import PopularList from "../components/popular-list";
-import { theme } from "../../config/theme";
+import SEO from "../components/seo";
+import StoryList from "../components/story-list";
+import Layout from "../layouts/layout";
 
 const Container = styled.div`
   display: flex;
@@ -84,6 +86,17 @@ const IndexPage = ({ data }) => {
 };
 
 export default IndexPage;
+
+IndexPage.propTypes = {
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        find: PropTypes.finc,
+        filter: PropTypes.func,
+      },
+    },
+  },
+};
 
 export const query = graphql`
   query {

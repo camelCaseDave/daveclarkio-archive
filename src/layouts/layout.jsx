@@ -1,10 +1,11 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+
+import Footer from "../components/footer";
 import Header from "../components/header";
 import SEO from "../components/seo";
 import Wrapper from "../components/wrapper";
 import GlobalStyle from "../styles/global-style";
-import Footer from "../components/footer";
 
 const Layout = ({ children }) => {
   return (

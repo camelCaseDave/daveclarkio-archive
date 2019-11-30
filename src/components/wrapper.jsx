@@ -1,5 +1,6 @@
-import { theme } from "../../config/theme";
 import styled from "@emotion/styled";
+
+import { theme } from "../../config/theme";
 
 const Wrapper = styled.div`
   z-index: -1;

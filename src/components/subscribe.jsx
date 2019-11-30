@@ -1,7 +1,8 @@
-import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { theme } from "../../config/theme";
+import React, { useState } from "react";
 import BellIcon from "react-bell-icon";
+
+import { theme } from "../../config/theme";
 import SubscribeModal from "./subscribe-modal";
 
 const Container = styled.div`

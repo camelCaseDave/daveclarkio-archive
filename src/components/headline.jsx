@@ -1,6 +1,7 @@
-import React from "react";
-import Img from "gatsby-image";
 import styled from "@emotion/styled";
+import Img from "gatsby-image";
+import React from "react";
+
 import { theme } from "../../config/theme";
 import FlatLink from "./flat-link";
 

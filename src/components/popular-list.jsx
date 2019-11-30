@@ -1,4 +1,5 @@
 import React from "react";
+
 import StoryTileSmall from "./story-tile-small";
 
 const PopularList = ({ data }) => {

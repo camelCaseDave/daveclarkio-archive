@@ -1,8 +1,9 @@
-import React from "react";
-import Layout from "../layouts/layout";
-import SEO from "../components/seo";
 import styled from "@emotion/styled";
+import React from "react";
+
 import { theme } from "../../config/theme";
+import SEO from "../components/seo";
+import Layout from "../layouts/layout";
 
 const Container = styled.div`
   display: flex;

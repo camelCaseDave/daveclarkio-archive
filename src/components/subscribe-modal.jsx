@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
-import { theme } from "../../config/theme";
 import addToMailchimp from "gatsby-plugin-mailchimp";
+import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
+
+import { theme } from "../../config/theme";
 
 const Modal = styled.div`
   z-index: ${props => (props.show ? "1" : "-1")};

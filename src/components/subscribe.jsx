@@ -29,7 +29,7 @@ const Button = styled.a`
   font-weight: 600;
   cursor: pointer;
   border-radius: 0;
-  line-height: 1.1em;
+  line-height: 1.3em;
 
   @media (max-width: ${theme.breakpoints.l}) {
     margin-left: 2em;
@@ -37,10 +37,10 @@ const Button = styled.a`
   }
 
   @media (max-width: ${theme.breakpoints.m}) {
-    height: 30px;
-    border-radius: 2px;
+    height: 36px;
+    border-radius: 1.5px;
     margin-left: 0;
-    line-height: normal;
+    line-height: 2.4em;
   }
 
   span {
@@ -56,7 +56,6 @@ const Button = styled.a`
 
 const StyledBellIcon = styled(BellIcon)`
   display: none;
-  margin-top: 0.29em;
 
   @media (max-width: ${theme.breakpoints.m}) {
     display: inline-block;
@@ -81,8 +80,8 @@ const Subscribe = ({ colour, backgroundColour }) => {
         >
           <span>Subscribe</span>
           <StyledBellIcon
-            width="20"
-            height="20"
+            width="15"
+            height="15"
             color={theme.colours.white.base}
             active={true}
             animate={false}

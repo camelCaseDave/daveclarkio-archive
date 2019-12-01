@@ -25,7 +25,7 @@ const Container = styled.div`
 
 const TextWrapper = styled.div`
   flex-basis: 75%;
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 `;
 
 const Title = styled.h4`

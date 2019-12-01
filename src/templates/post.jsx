@@ -50,7 +50,7 @@ const Post = ({ data }) => {
         <Meta>
           {date}
           <DotSeparator />
-          {readingTime}{" "}
+          {readingTime}
         </Meta>
         <div>
           <Content input={html} />

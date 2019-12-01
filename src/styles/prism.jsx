@@ -150,14 +150,7 @@ const prism = css`
   blockquote {
     padding: 0 1em;
     color: #6a737d;
-    border-left: .25em solid #dfe2e5;
-  }
-
-  .gatsby-resp-image-wrapper {
-    @media (max-width ${theme.breakpoints.m}) {
-      margin-left: -24px;
-      margin-right: -24px;
-    }
+    border-left: 0.25em solid #dfe2e5;
   }
 
   /* overrides color-values for the Line Numbers plugin

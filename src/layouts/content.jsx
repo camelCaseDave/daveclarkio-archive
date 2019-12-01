@@ -74,6 +74,13 @@ const Wrapper = styled.div`
   .gatsby-resp-image-wrapper {
     margin-bottom: 1.2em;
   }
+
+  @media (max-width: ${theme.breakpoints.m}) {
+    span.gatsby-resp-image-wrapper {
+      margin-left: -1em !important;
+      margin-right: -1em !important;
+    }
+  }
 `;
 
 const Content = ({ input }) => (

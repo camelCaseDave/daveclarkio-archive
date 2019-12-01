@@ -49,6 +49,8 @@ const Modal = styled.div`
     @media (max-width: ${theme.breakpoints.m}) {
       padding-top: 0.5em;
       padding-bottom: 0.5em;
+      padding-left: 1em;
+      line-height: 1.5em;
     }
 
     ::placeholder {
@@ -85,6 +87,7 @@ const Form = styled.form`
 const ButtonContainer = styled.div`
   @media (max-width: ${theme.breakpoints.m}) {
     width: 25%;
+    font-size: 1em;
   }
 `;
 
@@ -101,6 +104,12 @@ const Feedback = styled.div`
   text-align: center;
   color: white;
   font-weight: 600;
+  font-size: 0.75em;
+  line-height: 2em;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.l}) {
     width: calc(33vw - 3em);
@@ -112,7 +121,7 @@ const Feedback = styled.div`
     left: 0;
     right: 0;
     margin: auto;
-    transform: translate(0, 3.5em);
+    transform: translate(0, 4.5em);
   }
 
   @media (max-width: ${theme.breakpoints.s}) {
@@ -138,8 +147,7 @@ const SubscribeModal = props => {
 
     addToMailchimp(email).then(data => {
       if (data.result === "error") {
-        setFeedback(!feedback);
-        setFeedbackMsg(data.msg);
+        alert(data.msg);
       } else {
         setFeedback(!feedback);
         setFeedbackMsg(data.msg);
@@ -152,7 +160,7 @@ const SubscribeModal = props => {
   };
 
   const hideFeedback = () => {
-    setTimeout(() => setFeedback(!feedback), 3000);
+    setTimeout(() => setFeedback(!feedback), 4000);
   };
 
   return (

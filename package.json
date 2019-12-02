@@ -52,7 +52,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint --fix 'src/**' && echo 'Lint complete'",
+    "lint": "eslint --fix . && echo 'Lint complete'",
     "start": "npm run develop",
     "serve": "gatsby serve"
   },

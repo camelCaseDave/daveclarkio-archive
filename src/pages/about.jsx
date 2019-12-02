@@ -7,9 +7,9 @@ import Layout from "../layouts/layout";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  height: calc(100vh - 17.5em);
-  flex-direction: row;
+  height: calc(100vh - 17.5em - 57px);
   flex-wrap: wrap;
   margin-top: 2rem;
 
@@ -23,7 +23,8 @@ const AboutPage = () => {
     <Layout>
       <SEO title="About | Dave Clark" />
       <Container>
-        <h1>Coming soon!</h1>
+        <h1>About Me</h1>
+        <p>Coming soon 👷</p>
       </Container>
     </Layout>
   );

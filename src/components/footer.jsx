@@ -25,7 +25,7 @@ const Links = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 500;
-  height: 7em;
+  height: 10.5em;
   justify-content: space-evenly;
 `;
 
@@ -47,6 +47,9 @@ const Footer = () => (
         <FlatLink to="/about">About</FlatLink>
         <ExternalLink href={links.linkedin} target="_blank">
           LinkedIn
+        </ExternalLink>
+        <ExternalLink href={links.twitter} target="_blank">
+          Twitter
         </ExternalLink>
         <ExternalLink href={links.github} target="_blank">
           GitHub

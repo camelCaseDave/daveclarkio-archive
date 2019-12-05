@@ -27,4 +27,7 @@ export const theme = {
     m: "727.98px",
     l: "1192px",
   },
+  headline: {
+    height: "407px",
+  },
 };

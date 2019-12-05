@@ -71,7 +71,27 @@ const Wrapper = styled.div`
     }
   }
 
+  div.heading {
+    .gatsby-resp-image-image {
+      object-fit: cover;
+    }
+
+    .gatsby-resp-image-background-image,
+    .gatsby-resp-image-wrapper {
+      max-height: ${theme.headline.height};
+    }
+
+    .gatsby-resp-image-background-image {
+      padding-bottom: ${theme.headline.height} !important;
+    }
+  }
+
+  .gatsby-resp-image-link {
+    height: 100%;
+  }
+
   .gatsby-resp-image-wrapper {
+    max-width: none !important;
     margin-bottom: 1.2em;
   }
 

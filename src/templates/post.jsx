@@ -20,7 +20,7 @@ const Title = styled.h1`
   margin-bottom: 0;
 `;
 
-const Description = styled.h3`
+const Description = styled.p`
   color: grey;
   font-weight: normal;
   margin-top: 1em;

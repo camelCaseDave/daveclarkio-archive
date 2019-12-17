@@ -10,7 +10,7 @@ const GlobalStyle = props => (
       html {
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
           Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-        color: ${theme.colours.black.base};
+        color: black;
       }
       body {
         margin: 0;

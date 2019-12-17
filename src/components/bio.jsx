@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 
-import avatar from "../images/dave-baw.png";
+import avatar from "../images/dave.png";
 import ThemedLink from "./themed-link";
 
 const Heading = styled.h2`

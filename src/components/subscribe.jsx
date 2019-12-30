@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Button = styled.a`
   color: ${props => props.colour};
-  background-color: ${props => props.backgroundColour};
+  background-color: black;
   width: 100%;
   height: 26px;
   text-align: center;

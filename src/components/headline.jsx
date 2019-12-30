@@ -20,8 +20,8 @@ const Title = styled.h1`
 `;
 
 const Description = styled.h4`
-  color: grey;
-  font-weight: normal;
+  color: ${theme.colours.black.base};
+  font-weight: 500;
   margin: 0;
 
   @media (max-width: ${theme.breakpoints.m}) {

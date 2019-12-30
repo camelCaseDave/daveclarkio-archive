@@ -40,7 +40,7 @@ const Modal = styled.div`
     padding: 0.2em;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
-    border: 1px solid ${theme.colours.black.base};
+    border: 1px solid black;
     border-radius: 1px;
     width: 100%;
     font-weight: 600;
@@ -54,7 +54,7 @@ const Modal = styled.div`
     }
 
     ::placeholder {
-      color: ${theme.colours.black.base};
+      color: black;
       opacity: 1;
     }
 
@@ -75,7 +75,7 @@ const Button = styled.button`
   border: none;
   box-sizing: border-box;
   color: white;
-  background-color: ${theme.colours.black.base};
+  background-color: black;
   cursor: pointer;
 `;
 

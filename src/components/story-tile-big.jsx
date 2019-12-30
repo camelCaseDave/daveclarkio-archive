@@ -44,8 +44,8 @@ const Title = styled.h3`
 
 const Description = styled.h4`
   margin: 0;
-  color: grey;
-  font-weight: normal;
+  color: ${theme.colours.black.base};
+  font-weight: 500;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -61,7 +61,7 @@ const Description = styled.h4`
 
 const Footer = styled.h4`
   margin: 0;
-  font-weight: normal;
+  font-weight: 500;
 
   @media (max-width: ${theme.breakpoints.m}) {
     font-size: 0.8em;

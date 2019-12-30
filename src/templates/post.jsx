@@ -9,6 +9,7 @@ import DotSeparator from "../components/dot-separator";
 import SEO from "../components/seo";
 import Content from "../layouts/content";
 import Layout from "../layouts/layout";
+import { theme } from "../../config/theme";
 
 const Wrapper = styled.div`
   max-width: 680px;
@@ -21,13 +22,14 @@ const Title = styled.h1`
 `;
 
 const Description = styled.p`
-  color: grey;
-  font-weight: normal;
+  color: ${theme.colours.black.base};
+  font-weight: 500;
   margin-top: 1em;
 `;
 
 const Meta = styled.div`
   margin-bottom: 2rem;
+  font-weight: 500;
 `;
 
 const Post = ({ data }) => {

@@ -12,6 +12,7 @@ const Heading = styled.h2`
 const TextContainer = styled.div`
   flex-basis: 75%;
   padding-right: 2rem;
+  font-weight: 500;
 `;
 
 const AvatarContainer = styled.div`

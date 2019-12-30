@@ -19,7 +19,6 @@ const Header = () => {
   return (
     <Container>
       <Logo src={logo} colour={theme.colours.black.base} />
-      <Subscribe colour="white" backgroundColour={theme.colours.black.base} />
     </Container>
   );
 };

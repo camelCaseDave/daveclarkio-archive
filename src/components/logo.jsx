@@ -21,14 +21,14 @@ const Container = styled.div`
 
 const Title = styled.div`
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1.75em;
   margin: 0;
   margin-left: 0.5em;
-  margin-bottom: 2px;
+  line-height: 0;
 
   @media (max-width: ${theme.breakpoints.m}) {
+    display: none;
     margin-left: 0.5em;
-    display: table-caption;
     font-size: 1em;
     font-weight: 500;
     line-height: 1.15em;

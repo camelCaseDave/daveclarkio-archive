@@ -3,14 +3,9 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { theme } from "../../config/theme";
-import FlatLink from "./flat-link";
-import InlineImage from "./inline-image";
 
-const ImageWrapper = styled.div`
-  flex-basis: 25%;
-  height: 50px;
-  width: 50px;
-`;
+import DotSeparator from "./dot-separator";
+import FlatLink from "./flat-link";
 
 const Container = styled.div`
   display: flex;
@@ -23,14 +18,8 @@ const Container = styled.div`
   }
 `;
 
-const TextWrapper = styled.div`
-  flex-basis: 75%;
-  padding-right: 1.5rem;
-`;
-
 const Title = styled.h4`
   margin: 0;
-  margin-bottom: 0.5em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -38,29 +27,34 @@ const Title = styled.h4`
   overflow: hidden;
 `;
 
-const StoryTileSmall = ({ title, cover, path }) => {
+const Footer = styled.h4`
+  margin: 0;
+  margin-top: 0.5em;
+  font-weight: 500;
+  color: ${theme.colours.black.base};
+  font-size: 0.9em;
+`;
+
+const StoryTileSmall = ({ title, path, date, readingTime }) => {
   return (
     <Container>
-      <TextWrapper>
-        <Title>
-          <FlatLink to={path}>{title}</FlatLink>
-        </Title>
-      </TextWrapper>
-      <ImageWrapper>
-        <FlatLink to={path}>
-          <InlineImage url={cover ? cover.src : ""} />
-        </FlatLink>
-      </ImageWrapper>
+      <Title>
+        <FlatLink to={path}>{title}</FlatLink>
+        <Footer>
+          {date}
+          <DotSeparator />
+          {readingTime}
+        </Footer>
+      </Title>
     </Container>
   );
 };
 
 StoryTileSmall.propTypes = {
+  date: PropTypes.strong,
   title: PropTypes.string,
-  cover: {
-    src: PropTypes.string,
-  },
   path: PropTypes.string,
+  readingTime: PropTypes.string,
 };
 
 export default StoryTileSmall;

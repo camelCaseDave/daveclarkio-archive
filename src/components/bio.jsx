@@ -1,18 +1,22 @@
 import styled from "@emotion/styled";
 import React from "react";
 
+import { theme } from "../../config/theme";
 import avatar from "../images/dave.png";
 import ThemedLink from "./themed-link";
 
 const Heading = styled.h2`
   margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 `;
 
 const TextContainer = styled.div`
   flex-basis: 75%;
   padding-right: 2rem;
   font-weight: 500;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: ${theme.colours.black.base};
 `;
 
 const AvatarContainer = styled.div`

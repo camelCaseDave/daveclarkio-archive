@@ -7,16 +7,18 @@ const PopularList = ({ data }) => {
   return (
     <>
       {data.map(({ node }) => {
-        const { id, frontmatter } = node;
-        const { title, description, cover, path } = frontmatter;
+        const { id, frontmatter, fields } = node;
+        const readingTime = fields.readingTime.text;
+        const { title, description, date, path } = frontmatter;
 
         return (
           <StoryTileSmall
             key={id}
             title={title}
             description={description}
-            cover={cover.childImageSharp.fluid}
             path={path}
+            date={date}
+            readingTime={readingTime}
           />
         );
       })}

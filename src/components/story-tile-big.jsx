@@ -17,6 +17,10 @@ const Container = styled.div`
   padding-top: 2em;
   min-height: 148px;
 
+  @media (max-width: ${theme.breakpoints.l}) {
+    min-height: 128px;
+  }
+
   @media (max-width: ${theme.breakpoints.m}) {
     min-height: auto;
   }
@@ -44,6 +48,7 @@ const Title = styled.h3`
 
 const Description = styled.h4`
   margin: 0;
+  margin-top: 0.5em;
   color: ${theme.colours.black.base};
   font-weight: 500;
   display: -webkit-box;
@@ -51,6 +56,10 @@ const Description = styled.h4`
   -webkit-line-clamp: 3;
   text-overflow: ellipsis;
   overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.l}) {
+    -webkit-line-clamp: 2;
+  }
 
   @media (max-width: ${theme.breakpoints.m}) {
     font-size: 0.8em;
@@ -62,6 +71,7 @@ const Description = styled.h4`
 const Footer = styled.h4`
   margin: 0;
   font-weight: 500;
+  color: ${theme.colours.black.base};
 
   @media (max-width: ${theme.breakpoints.m}) {
     font-size: 0.8em;

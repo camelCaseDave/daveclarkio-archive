@@ -28,6 +28,6 @@ export const theme = {
     l: "1192px",
   },
   headline: {
-    height: "407px",
+    height: "414px",
   },
 };

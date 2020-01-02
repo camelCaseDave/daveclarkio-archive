@@ -151,6 +151,10 @@ const prism = css`
     padding: 0 1em;
     color: #6a737d;
     border-left: 0.25em solid #dfe2e5;
+
+    @media (max-width: ${theme.breakpoints.m}) {
+      margin-inline-start: 20px;
+    }
   }
 
   /* overrides color-values for the Line Numbers plugin

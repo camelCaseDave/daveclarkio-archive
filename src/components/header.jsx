@@ -1,9 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 
-import { theme } from "../../config/theme";
 import Logo from "../components/logo";
-import Subscribe from "../components/subscribe";
 import logo from "../images/favicon.png";
 
 const Container = styled.div`
@@ -18,7 +16,7 @@ const Container = styled.div`
 const Header = () => {
   return (
     <Container>
-      <Logo src={logo} colour={theme.colours.black.base} />
+      <Logo src={logo} colour={"grey"} />
     </Container>
   );
 };

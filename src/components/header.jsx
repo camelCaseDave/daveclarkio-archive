@@ -8,7 +8,7 @@ const Container = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
   height: 3.5em;
   margin-bottom: 3.5em;
 `;

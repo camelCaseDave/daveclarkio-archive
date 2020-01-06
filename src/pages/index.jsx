@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home | Dave Clark" />
+      <SEO title="Dave Clark IO" />
       <Container>
         <Left>
           <Headline data={headline} />

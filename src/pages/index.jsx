@@ -88,14 +88,27 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 IndexPage.propTypes = {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        find: PropTypes.finc,
-        filter: PropTypes.func,
-      },
-    },
-  },
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string.isRequred,
+            fields: PropTypes.shape({
+              readingTime: PropTypes.shape({
+                text: PropTypes.string,
+              }),
+            }).isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              path: PropTypes.string.isRequired,
+              date: PropTypes.string,
+            }).isRequired,
+          }).isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export const query = graphql`

@@ -35,7 +35,7 @@ const Meta = styled.div`
 const Post = ({ data }) => {
   const { html, frontmatter, fields } = data.markdownRemark;
   const readingTime = fields.readingTime.text;
-  const { date, title, path, description, cover } = frontmatter;
+  const { date, title, path, description, seoImage } = frontmatter;
 
   return (
     <Layout>
@@ -44,7 +44,7 @@ const Post = ({ data }) => {
           title={title}
           pathname={path}
           article
-          banner={cover}
+          banner={seoImage}
           description={description}
         />
         <Title>{title}</Title>
@@ -81,6 +81,8 @@ export const query = graphql`
         date(formatString: "MMM Do YYYY")
         title
         description
+        seoImage
+        path
       }
     }
   }

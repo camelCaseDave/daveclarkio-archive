@@ -10,6 +10,7 @@ import FlatLink from "./flat-link";
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding-top: 2em;
 
   @media (max-width: ${theme.breakpoints.l}) and (min-width: ${theme.breakpoints
@@ -40,20 +41,20 @@ const StoryTileSmall = ({ title, path, date, readingTime }) => {
     <Container>
       <Title>
         <FlatLink to={path}>{title}</FlatLink>
-        <Footer>
-          {date}
-          <DotSeparator />
-          {readingTime}
-        </Footer>
       </Title>
+      <Footer>
+        {date}
+        <DotSeparator />
+        {readingTime}
+      </Footer>
     </Container>
   );
 };
 
 StoryTileSmall.propTypes = {
-  date: PropTypes.strong,
-  title: PropTypes.string,
-  path: PropTypes.string,
+  date: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
   readingTime: PropTypes.string,
 };
 

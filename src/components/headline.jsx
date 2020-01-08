@@ -59,16 +59,16 @@ const Headline = ({ data }) => {
 export default Headline;
 
 Headline.propTypes = {
-  data: {
-    frontmatter: {
-      cover: {
-        childImageSharp: {
-          fluid: PropTypes.string,
-        },
-      },
-      title: PropTypes.string,
-      path: PropTypes.string,
-      description: PropTypes.string,
-    },
-  },
+  data: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      cover: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          fluid: PropTypes.object,
+        }),
+      }),
+      title: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

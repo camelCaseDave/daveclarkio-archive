@@ -21,7 +21,7 @@ const Container = styled.div`
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title="About | Dave Clark" />
+      <SEO title="About Dave Clark" />
       <Container>
         <h1>About Me</h1>
         <p>Coming soon 👷</p>

@@ -31,7 +31,5 @@ const StoryList = ({ data }) => {
 export default StoryList;
 
 StoryList.propTypes = {
-  data: {
-    map: PropTypes.func,
-  },
+  data: PropTypes.array.isRequired,
 };

@@ -29,7 +29,5 @@ const PopularList = ({ data }) => {
 export default PopularList;
 
 PopularList.propTypes = {
-  data: {
-    map: PropTypes.func,
-  },
+  data: PropTypes.array,
 };

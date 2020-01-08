@@ -124,12 +124,12 @@ const StoryTileBig = ({
 export default StoryTileBig;
 
 StoryTileBig.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   date: PropTypes.string,
-  cover: {
+  cover: PropTypes.shape({
     src: PropTypes.string,
-  },
+  }),
   path: PropTypes.string,
   readingTime: PropTypes.string,
 };

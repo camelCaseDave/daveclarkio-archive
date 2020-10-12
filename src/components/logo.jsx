@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { theme } from "../../config/theme";
-import GreyLogo from "../images/logo-grey.png";
+import GreyLogo from "../images/logo-full.png";
 import WhiteLogo from "../images/logo-white.png";
 import FlatLink from "./flat-link";
 
@@ -13,7 +13,6 @@ const Container = styled.div`
   color: ${props => props.colour};
   align-items: center;
   height: 3.5em;
-  flex-basis: 66.66667%;
   flex-grow: 0;
 
   @media (max-width: ${theme.breakpoints.m}) {
@@ -33,7 +32,6 @@ const LogoImage = styled.img`
 const LogoText = styled.img`
   height: 1.5em;
   line-height: 0;
-  padding-left: 0.67em;
 `;
 
 const StyledFlatLink = styled(FlatLink)`
@@ -43,14 +41,18 @@ const StyledFlatLink = styled(FlatLink)`
 const Logo = ({ src, colour }) => {
   return (
     <Container>
-      <StyledFlatLink to={"/"}>
-        <LogoImage src={src} alt="Dave Clark IO" />
-      </StyledFlatLink>
+      {colour === "grey" ? (
+        <></>
+      ) : (
+        <StyledFlatLink to={"/"}>
+          <LogoImage src={src} alt="Dave Clark IO" />
+        </StyledFlatLink>
+      )}
       <FlatLink to={"/"}>
         {colour === "grey" ? (
           <LogoText src={GreyLogo} />
         ) : (
-          <LogoText src={WhiteLogo} />
+          <LogoText src={WhiteLogo} style={{ paddingLeft: "0.67em" }} />
         )}
       </FlatLink>
     </Container>

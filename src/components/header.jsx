@@ -8,14 +8,14 @@ const Container = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
-  height: 3.5em;
-  margin-bottom: 3.5em;
+  height: 2.5em;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
 `;
 
 const Header = () => {
   return (
-    <Container>
+    <Container >
       <Logo src={logo} colour={"grey"} />
     </Container>
   );

@@ -44,7 +44,7 @@ const Footer = () => (
     </Wrapper>
     <Wrapper>
       <Links>
-        <FlatLink to="/about">About</FlatLink>
+        <FlatLink to="/blogs">MSFT cloud blogs</FlatLink>
         <ExternalLink href={links.linkedin} target="_blank">
           LinkedIn
         </ExternalLink>

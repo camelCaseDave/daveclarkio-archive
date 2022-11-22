@@ -18,7 +18,7 @@
   </p>
 
   <p align="center">
-    Dave Clark public website and blog, available at <a href="https://daveclark.io">daveclark.io</a>.
+    Dave Clark public website and blog, available at <a href="https://daveclark.io">www.daveclark.io</a>.
   </p>
 
 ---

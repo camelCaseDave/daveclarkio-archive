@@ -33,7 +33,7 @@ const AboutContainer = styled.div`
     margin-bottom: 0.5em;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 5;
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -45,19 +45,21 @@ const Avatar = styled.img`
 
 const Bio = () => (
   <>
-    <Heading>About Dave</Heading>
+    <Heading>Blogs archive</Heading>
     <AboutContainer>
       <TextContainer>
         <p>
-          Hi I&apos;m Dave, a full stack .NET developer and consultant for
-          Microsoft Power Platform.
+        Here you'll find a treasure trove of archived blogs on Power Platform.
+        </p>
+        <p>
+        Let's chat! All things Power Platform, Azure, and <b>101010</b>:
         </p>
       </TextContainer>
       <AvatarContainer>
         <Avatar src={avatar} />
       </AvatarContainer>
     </AboutContainer>
-    <ThemedLink text="Read more" path="/about" />
+    <ThemedLink text="@DaveClarkIO" path="https://twitter.com/DaveClarkIO" />
   </>
 );
 

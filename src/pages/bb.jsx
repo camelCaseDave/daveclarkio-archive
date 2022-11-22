@@ -18,16 +18,15 @@ const Container = styled.div`
   }
 `;
 
-const AboutPage = () => {
+const BbPage = () => {
   return (
     <Layout>
-      <SEO title="About Dave Clark" />
+      <SEO title="Bristol Burgers" />
       <Container>
-        <h1>About Me</h1>
         <p>Coming soon 👷</p>
       </Container>
     </Layout>
   );
 };
 
-export default AboutPage;
+export default BbPage;

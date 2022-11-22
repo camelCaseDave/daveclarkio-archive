@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: "/",
   title: "Dave Clark",
   titleAlt: "Dave Clark",
-  description: "Power Platform content and tutorials for professionals.",
+  description: "Retired consultant - collection of in-depth articles on Microsoft Power Platform.",
   url: "https://daveclark.io",
   siteUrl: "https://daveclark.io",
   siteLanguage: "en",
